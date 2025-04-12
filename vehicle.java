@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class vehicle {
     // Private attributes
     private String brand;
@@ -5,7 +6,7 @@ public class vehicle {
     private String fuelType;
 
     // Constructor
-    public vehicle(String brand, int speed, String fuelType) {
+    public vehicle() {
         this.brand = brand;
         this.speed = speed;
         this.fuelType = fuelType;
@@ -36,7 +37,7 @@ public class vehicle {
 
         // Constructor
         public car(String brand, int speed, String fuelType, int numberOfDoors) {
-            super(brand, speed, fuelType);
+            super();
             this.numberOfDoors = numberOfDoors;
         }
 
@@ -54,7 +55,7 @@ public class vehicle {
         private boolean hasSidecar;
         
         public motorcycle(String brand, int speed, String fueltype, int numberOfDoors, boolean hasSidecar) {
-            super(brand, speed, fuelType);
+            super();
             this.hasSidecar = hasSidecar;
         }
         public boolean hasSidecar() {
@@ -65,5 +66,29 @@ public class vehicle {
             super.displayInfo();
             System.out.println("Has Sidecar: " + (hasSidecar ? "Yes" : "No"));
         }
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user for Car details
+        System.out.println("Enter Car details:");
+        System.out.print("Brand: ");
+        String carBrand = scanner.nextLine();
+        System.out.print("Speed (km/h): ");
+        int carSpeed = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Fuel Type: ");
+        String carFuelType = scanner.nextLine();
+        System.out.print("Number of Doors: ");
+        int carDoors = scanner.nextInt();
+
+        // Create Car object
+        car userCar = new vehicle().new car(carBrand, carSpeed, carFuelType, carDoors);
+
+        // Display Car details
+        System.out.println("\nCar Details:");
+        userCar.displayInfo();
+
+        scanner.close();
     }
 }
