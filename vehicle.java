@@ -44,12 +44,26 @@ public class vehicle {
         public int getNumberOfDoors() {
             return numberOfDoors;
         }
-
-        // Overriding displayInfo method
         @Override
         public void displayInfo() {
             super.displayInfo();
             System.out.println("Number of Doors: " + numberOfDoors);
+        }
+    }
+    public class motorcycle extends vehicle {
+        private boolean hasSidecar;
+        
+        public motorcycle(String brand, int speed, String fueltype, int numberOfDoors, boolean hasSidecar) {
+            super(brand, speed, fuelType);
+            this.hasSidecar = hasSidecar;
+        }
+        public boolean hasSidecar() {
+            return hasSidecar;
+        }
+        @Override
+        public void displayInfo() {
+            super.displayInfo();
+            System.out.println("Has Sidecar: " + (hasSidecar ? "Yes" : "No"));
         }
     }
 }
