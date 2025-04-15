@@ -1,11 +1,11 @@
-package Activity04;
+    package Activity04;
 
 public class teachers extends person {
     private String subject;
 
-    // Constructor 
+    // Constructor
     public teachers(String name, int id, String subject) {
-        super(name, id); // Call the constructor of the parent class (person)
+        super(name, id, 0); // Call the constructor of the parent class (person) with a default value for the third parameter
         this.subject = subject;
     }
 

@@ -1,15 +1,28 @@
 package Activity04;
 
-public class students {
-     private int gradelevel;
+public class students extends person {
+    private String gradeLevel;
 
-     public students(int gradelevel) {
-         this.gradelevel = gradelevel;
-     }
-        public int getGradeLevel() {
-            return gradelevel;
-        }
-        public void displayInfo() {
-            System.out.println("Grade Level: " + gradelevel);
-        }
+    // Constructor
+    public students(String name, int id, int age, String gradeLevel) {
+        super(name, id, age); // Call the parent constructor with the required third argument
+        this.gradeLevel = gradeLevel;
+    }
+
+    // Getter for gradeLevel
+    public String getGradeLevel() {
+        return gradeLevel;
+    }
+
+    // Setter for gradeLevel
+    public void setGradeLevel(String gradeLevel) {
+        this.gradeLevel = gradeLevel;
+    }
+
+    // Override displayInfo to include gradeLevel
+    @Override
+    public void displayInfo() {
+        super.displayInfo(); // Call the parent displayInfo method
+        System.out.println("Grade Level: " + gradeLevel);
+    }
 }
